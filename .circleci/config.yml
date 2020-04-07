@@ -16,3 +16,4 @@ workflows:
                 family: 'kim-app-nginx'
                 cluster-name: 'default-kim5'
                 container-image-name-updates: 'container=nginx,image-and-tag=${AWS_ECR_ACCOUNT_URL}/nginx:${CIRCLE_SHA1}'
+#hoge
