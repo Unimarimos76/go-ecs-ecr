@@ -14,5 +14,5 @@ workflows:
                 requires:
                   - aws-ecr/build-and-push-image
                 family: 'ecr-test'
-                cluster-name: 'default-kim5'
+                cluster-name: 'circleci-test-cluster'
                 container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}"
