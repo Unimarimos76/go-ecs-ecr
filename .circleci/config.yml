@@ -15,5 +15,5 @@ workflows:
                   - aws-ecr/build_and_push_image
                 family: 'kim-app-nginx'
                 cluster-name: 'default-kim5'
-                container-image-name-updates: 'container=nginx,image-and-tag=${AWS_ECR_ACCOUNT_URL}:${CIRCLE_SHA1}'
+                container-image-name-updates: 'container=nginx,image-and-tag=${AWS_ECR_ACCOUNT_URL}/ecr-registory:${CIRCLE_SHA1}'
 #hoge
