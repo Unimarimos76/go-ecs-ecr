@@ -16,4 +16,4 @@ workflows:
         family: 'ecr-test'
         service-name: 'circleci-test-1'
         cluster-name: 'circleci-test-cluster'
-        container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:hoge'
+        container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:${CIRCLE_SHA1}'
