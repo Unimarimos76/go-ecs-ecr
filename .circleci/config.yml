@@ -13,7 +13,7 @@ workflows:
     - aws-ecs/deploy-service-update: 
         requires:
         - aws-ecr/build-and-push-image
-          family: 'ecr-test'
-          service-name: 'circleci-test-1'
-          cluster-name: 'circleci-test-cluster'
-          container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:hoge'
+            family: 'ecr-test'
+            service-name: 'circleci-test-1'
+            cluster-name: 'circleci-test-cluster'
+            container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:hoge'
