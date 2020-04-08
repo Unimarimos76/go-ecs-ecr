@@ -5,15 +5,15 @@ version: 2.1
 workflows:
   build_and_deploy:
     jobs:
-      - aws-ecr/build-and-push-image: 
-          account-url: AWS_ECR_ACCOUNT_URL
-          repo: 'ecr-registory'
-          tag: '${CIRCLE_SHA1}'
+    - aws-ecr/build-and-push-image: 
+        account-url: AWS_ECR_ACCOUNT_URL
+        repo: 'ecr-registory'
+        tag: '${CIRCLE_SHA1}'
 
-      - aws-ecs/deploy-service-update: 
-                requires:
-                  - aws-ecr/build-and-push-image
-                family: 'ecr-test'
-		service-name: 'circleci-test-1'
-                cluster-name: 'circleci-test-cluster'
-                container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:hoge'
+    - aws-ecs/deploy-service-update: 
+        requires:
+        - aws-ecr/build-and-push-image
+          family: 'ecr-test'
+          service-name: 'circleci-test-1'
+          cluster-name: 'circleci-test-cluster'
+          container-image-name-updates: 'container=circleci-test,image-and-tag=${AWS_ECR_ACCOUNT_URL}:hoge'
