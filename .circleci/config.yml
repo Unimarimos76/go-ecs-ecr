@@ -12,7 +12,7 @@ workflows:
 
     - aws-ecs/deploy-service-update: 
         requires:
-        - aws-ecr/build-and-push-image
+        - aws-ecr/build-and-push-image:
             family: 'ecr-test'
             service-name: 'circleci-test-1'
             cluster-name: 'circleci-test-cluster'
