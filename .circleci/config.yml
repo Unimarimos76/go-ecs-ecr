@@ -10,9 +10,9 @@ workflows:
         repo: 'fargate_registry'
         tag: '${CIRCLE_SHA1}'
     - hold:
-    type: approval
-    requires: 
-      - aws-ecr/build-and-push-image
+      type: approval
+      requires: 
+        - aws-ecr/build-and-push-image
     - aws-ecs/deploy-service-update: 
         requires:
         - aws-ecr/build-and-push-image
