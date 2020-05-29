@@ -9,7 +9,9 @@ workflows:
         account-url: AWS_ECR_ACCOUNT_URL
         repo: 'fargate_registry'
         tag: '${CIRCLE_SHA1}'
-
+    - hold:
+      type: approval
+      
         #    - aws-ecs/deploy-service-update: 
         #        requires:
         #        - aws-ecr/build-and-push-image
